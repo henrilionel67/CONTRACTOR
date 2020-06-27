@@ -3,23 +3,118 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<section class="padding ptb-xs-40">
+				<div class="container">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+					<div class="row">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/glenn/Desktop/Coli@Hweb/cleaning/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/glenn/Desktop/Coli@Hweb/cleaning/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
-{% block footer %}
-<div>
-this is the footer
-</div>
+						<div class="col-lg-8">
+
+							<div class="headeing pb-30">
+								<h2>Get in Touch</h2>
+								<span class="b-line l-left line-h"></span>
+							</div>
+							<!-- Contact FORM -->
+							<form class="contact-form " id="contact">
+								<!-- IF MAIL SENT SUCCESSFULLY -->
+								<div id="success">
+									<div role="alert" class="alert alert-success">
+										<strong>Thanks</strong> for using reaching out. Your message has been sent.
+									</div>
+								</div>
+								<!-- END IF MAIL SENT SUCCESSFULLY -->
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-field">
+											<input class="input-sm form-full" id="name" type="text" name="form-name" placeholder="Your Name">
+										</div>
+										<div class="form-field">
+											<input class="input-sm form-full" id="email" type="text" name="form-email" placeholder="Email" >
+										</div>
+										<div class="form-field">
+											<input class="input-sm form-full" id="sub" type="text" name="form-subject" placeholder="Subject">
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-field">
+											<textarea class="form-full" id="message" rows="7" name="form-message" placeholder="Your Message" ></textarea>
+										</div>
+									</div>
+									<div class="col-lg-12 mt-30">
+										<button class="btn-text" type="button" id="submit" name="button">
+											Send Message
+										</button>
+									</div>
+								</div>
+							</form>
+							<!-- END Contact FORM -->
+						</div>
+
+						<div class="col-lg-4 contact mt-sm-30 mt-xs-30">
+							<div class="headeing pb-20">
+								<h2>Contact Info</h2>
+								<span class="b-line l-left line-h"></span>
+							</div>
+							<div class="contact-info">
+
+								<ul class="info">
+									<li>
+										<i class="fa fa-map-marker"></i>
+									<p>
+										13005 Greenvile Avenue
+										<span> California, TX 70240</span>
+									</p>
+									</li>
+
+									<li>
+										<div class="icon ion-android-call"></div>
+										<div class="content">
+											<p>200 256 265 000</p>
+											<p>200 256 265 000</p>
+										</div>
+									</li>
+									<li>
+										<div class="icon ion-ios-email"></div>
+										<div class="content">
+											<p>Support@yourmail.com</p>
+											<p>http://admin@.com</p>
+										</div>
+									</li>
+								</ul>
+								<ul class="event-social">
+									<li>
+										<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- Map Section -->
+
+			</section>
+			<!-- Map -->
+			<section class="map-box">
+				<div class="map">
+					<div id="map"></div>
+				</div>
+			</section>
+			<!-- Contact Section -->
+			<!--End Contact-->
 {% endblock %}
