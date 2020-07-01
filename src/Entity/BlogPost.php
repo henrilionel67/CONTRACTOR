@@ -53,7 +53,7 @@ class BlogPost
     /**
      * @var Author
      *
-     * @ORM\ManyToOne(targetEntity="Admin")
+     * @ORM\ManyToOne(targetEntity="Author")
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
      */
     private $author;
