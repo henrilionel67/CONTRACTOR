@@ -14,8 +14,8 @@
 								<h2>Get in Touch</h2>
 								<span class="b-line l-left line-h"></span>
 							</div>
-							<!-- Contact FORM -->
-							<form class="contact-form " id="contact">
+						
+							{{ form_start(form) }}
 								<!-- IF MAIL SENT SUCCESSFULLY -->
 								<div id="success">
 									<div role="alert" class="alert alert-success">
@@ -25,28 +25,26 @@
 								<!-- END IF MAIL SENT SUCCESSFULLY -->
 								<div class="row">
 									<div class="col-lg-6">
-										<div class="form-field">
-											<input class="input-sm form-full" id="name" type="text" name="form-name" placeholder="Your Name">
+										<div class="form-field ">
+											{{ form_row(form.name) }}
 										</div>
 										<div class="form-field">
-											<input class="input-sm form-full" id="email" type="text" name="form-email" placeholder="Email" >
+											{{ form_row(form.email) }}
 										</div>
 										<div class="form-field">
-											<input class="input-sm form-full" id="sub" type="text" name="form-subject" placeholder="Subject">
+											{{ form_row(form.subject) }}
 										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="form-field">
-											<textarea class="form-full" id="message" rows="7" name="form-message" placeholder="Your Message" ></textarea>
+										{{ form_row(form.message) }}
 										</div>
 									</div>
-									<div class="col-lg-12 mt-30">
-										<button class="btn-text" type="button" id="submit" name="button">
-											Send Message
-										</button>
-									</div>
+									        {{ form_widget(form) }}
+											<input type="submit" value="Send" class="btn btn-primary btn-lg" />
 								</div>
-							</form>
+						
+							{{ form_end(form) }}
 							<!-- END Contact FORM -->
 						</div>
 
@@ -67,18 +65,16 @@
 									</li>
 
 									<li>
-										<div class="icon ion-android-call"></div>
-										<div class="content">
-											<p>200 256 265 000</p>
-											<p>200 256 265 000</p>
-										</div>
+										<i class="icon ion-android-call"></i>
+										<p>
+											200 256 265 000
+										</p>
 									</li>
 									<li>
-										<div class="icon ion-ios-email"></div>
-										<div class="content">
-											<p>Support@yourmail.com</p>
-											<p>http://admin@.com</p>
-										</div>
+										<i class="icon ion-ios-email"></i>
+										<p>
+											Support@yourmail.com|
+										</p>
 									</li>
 								</ul>
 								<ul class="event-social">

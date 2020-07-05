@@ -1,16 +1,33 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-hwi_oauth_redirect:
-    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
-    prefix:   /connect
 
-hwi_oauth_login:
-    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-    prefix:   /login
+app_logout:
+    path: /logout
+    methods: GET
+create:
+  path: /admin/create-post
+  controller: App\Controller\AdminController::createPost
 
-auth0_login:
-    path:    /auth0/callback
+view:
+  path: /admin/view-post/{id}
+  controller: App\Controller\AdminController::viewPost
 
-auth0_logout:
-    path: /auth0/logout
+show:
+  path: /admin/show-post
+  controller: App\Controller\AdminController::showPost
+
+delete:
+  path: /admin/delete-post/{id}
+  controller: App\Controller\AdminController::deletePost
+
+update:
+  path: /admin/update-post/{id}
+  controller: App\Controller\AdminController::updatePost
+
+kms_froala_editor:
+    resource: '@KMSFroalaEditorBundle/Resources/config/routing.yml'
+    prefix:   /froalaeditor
+show-email:
+  path: /admin/show-email
+  controller: App\Controller\ContactController::showEmail

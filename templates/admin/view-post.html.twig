@@ -1,0 +1,38 @@
+{% extends 'admin-base.html.twig' %}
+{% block body %}
+<style>
+    th, td {
+        padding: 10px;
+    }
+    th {
+        text-align: right;
+    }
+</style>
+
+<h1>Article Created or Modified</h1>
+
+<table>
+    <tbody>
+    <tr>
+        <th>Title:</th>
+        <td>{{ post.title }}</td>
+    </tr>
+    <tr>
+        <th>Description:</th>
+        <td>{{ post.description }}</td>
+    </tr>
+    <tr>
+        <th>Article Body:</th>
+        <td>{{ post.content }}</td>
+    </tr>
+    <tr>
+        <th>slug:</th>
+        <td>{{ post.slug }}</td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+<a href="admin/show-post">View All</a> -
+<a href="admin/update-post/{{ post.id }}">Modify</a>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'admin-base.html.twig' %}
+{% block body %}
+<style>
+    th, td {
+        padding: 10px;
+    }
+    th {
+        text-align: left;
+    }
+</style>
+
+<h1>All Emails Recieved</h1>
+
+{% if contact is not empty %}
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Sender</th>
+            <th>Subject</th>
+            <th>Message</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contact in contact %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.subject }}</td>
+                <td>{{ contact.message | slice(0, 20) }}...</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No article found.</p>
+{% endif %}
+{% endblock %}

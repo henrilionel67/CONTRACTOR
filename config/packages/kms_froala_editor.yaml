@@ -1,0 +1,20 @@
+kms_froala_editor:
+    language: 'en'
+    toolbarInline: true
+    tableColors: [ "#FFFFFF", "#FF0000" ]
+    saveParams: { "id" : "myEditorField" }
+    # The image upload folder in your /web directory.
+    # Default: "/upload".
+    imageUploadFolder: "/assets/uploaded"
+
+    # The image upload URL base.
+    # Usage: if you are using URL rewritting for your assets.
+    # Default: same value as provided as folder.
+    imageUploadPath: "/assets/uploaded"
+    saveURL: "my_save_route"
+    saveInterval: 2500
+    saveParam: "content"
+    # Add some parameters to your save URL.
+    # Usage: if you need parameters to generate your save action route (see save explaination below).
+    # Default: null.
+    saveURLParams: { "id" : "myId" }

@@ -1,20 +1,26 @@
-{% extends 'base.html.twig' %}
+{% extends "base.html.twig" %}
 
-{% block title %}Hello BlogController!{% endblock %}
+{% block title %}App:blog:entry{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="container">
+        <div class="blog-header">
+            <h1 class="blog-title">Blog tutorial</h1>
+            <p class="lead blog-description">A basic description of the blog, built in Symfony, styled in Bootstrap 3, secured by Auth0.</p>
+        </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+                <div class="blog-post">
+                    <h2 class="blog-post-title">{{ post.title }}</h2>
+                    
+                    <h3>Description:</h3>
+                    <p>{{ post.description|raw }}</p>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/glenn/Desktop/Coli@Hweb/cleaning/src/Controller/BlogController.php'|file_link(0) }}">src/Controller/BlogController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/glenn/Desktop/Coli@Hweb/cleaning/templates/blog/index.html.twig'|file_link(0) }}">templates/blog/index.html.twig</a></code></li>
-    </ul>
-</div>
+                    <h3>Body:</h3>
+                    <p>{{ post.content|raw }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

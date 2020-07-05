@@ -1,0 +1,52 @@
+{% extends 'admin-base.html.twig' %}
+{% block body %}
+<style>
+    th, td {
+        padding: 10px;
+    }
+    th {
+        text-align: left;
+    }
+</style>
+
+<h1>All Articles</h1>
+
+{% if post is not empty %}
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Body</th>
+            <th>Slug</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in post %}
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.description }}</td>
+                <td>{{ post.content | slice(0, 20) }}...</td>
+                <td>
+                    {% if post.id != "" %}
+                        <a href="">Visit Homepage</a>
+                    {% else %}
+                        Void Field
+                    {% endif %}
+                </td>
+                <td><a href="admin/delete-post/{{ post.id }}">Delete</a></td>
+                <td><a href="admin/update-post/{{ post.id }}">Update</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No article found.</p>
+{% endif %}
+
+<br/>
+<a href="/admin/create-post">Create New</a>
+
+{% endblock %}

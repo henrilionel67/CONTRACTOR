@@ -12,8 +12,12 @@ class BlogController extends AbstractController
      */
     public function index()
     {
-        return $this->render('blog/index.html.twig', [
-            'controller_name' => 'BlogController',
-        ]);
+        $post = $this->getDoctrine()
+            ->getRepository('App\Entity\Post')
+            ->findAll();
+            return $this->render(
+                'blog/index.html.twig',
+                array('post' => $post)
+            );
     }
 }
