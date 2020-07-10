@@ -1,6 +1,6 @@
 
 README.md
-Simple-blog-in-symfony-4
+Website in-symfony-4
 
 Installation process
 
